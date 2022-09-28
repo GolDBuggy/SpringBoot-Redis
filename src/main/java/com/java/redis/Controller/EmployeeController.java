@@ -24,12 +24,12 @@ public class EmployeeController {
 
     @GetMapping("/all")
     public ResponseEntity<Iterable<Employee>> getAll(){
-        return ResponseEntity.accepted().body(employeeService.employees());
+        return ResponseEntity.ok(employeeService.employees());
     }
 
     @GetMapping("/get/{id}")
     public ResponseEntity<Employee> get(@PathVariable UUID id){
-        return ResponseEntity.accepted().body(employeeService.getEmp(id));
+        return ResponseEntity.ok(employeeService.getEmp(id));
     }
 
     @DeleteMapping("/delete/{id}")
